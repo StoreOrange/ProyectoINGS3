@@ -7,3 +7,6 @@ int main (void)
 
 
 //revision de errores por el Issue reportado  issue_1 , 
+
+//correccion del issue 1 listo .
+
