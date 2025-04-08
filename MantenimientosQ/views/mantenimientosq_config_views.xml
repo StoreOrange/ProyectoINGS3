@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Stage Views -->
+    <record id="mantenimientosq_stage_view_form" model="ir.ui.view">
+        <field name="name">mantenimientosq.stage.form</field>
+        <field name="model">mantenimientosq.stage</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="sequence"/>
+                            <field name="fold"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Descripción">
+                            <field name="description" placeholder="Descripción de la etapa..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mantenimientosq_stage_view_list" model="ir.ui.view">
+        <field name="name">mantenimientosq.stage.list</field>
+        <field name="model">mantenimientosq.stage</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="sequence" widget="handle"/>
+                <field name="name"/>
+                <field name="fold"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="mantenimientosq_stage_action" model="ir.actions.act_window">
+        <field name="name">Etapas de Mantenimiento</field>
+        <field name="res_model">mantenimientosq.stage</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree una nueva etapa de mantenimiento
+            </p>
+        </field>
+    </record>
+
+    <!-- Activity Type Views -->
+    <record id="mantenimientosq_activity_type_view_form" model="ir.ui.view">
+        <field name="name">mantenimientosq.activity.type.form</field>
+        <field name="model">mantenimientosq.activity.type</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Descripción">
+                            <field name="description" placeholder="Descripción del tipo de actividad..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mantenimientosq_activity_type_view_list" model="ir.ui.view">
+        <field name="name">mantenimientosq.activity.type.list</field>
+        <field name="model">mantenimientosq.activity.type</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="mantenimientosq_activity_type_action" model="ir.actions.act_window">
+        <field name="name">Tipos de Actividad</field>
+        <field name="res_model">mantenimientosq.activity.type</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree un nuevo tipo de actividad
+            </p>
+        </field>
+    </record>
+
+    <!-- Worksheet Template Views -->
+    <record id="mantenimientosq_worksheet_template_view_form" model="ir.ui.view">
+        <field name="name">mantenimientosq.worksheet.template.form</field>
+        <field name="model">mantenimientosq.worksheet.template</field>
+        <field name="arch" type="xml">
+            <form>
+                <sheet>
+                    <group>
+                        <group>
+                            <field name="name"/>
+                            <field name="active"/>
+                        </group>
+                    </group>
+                    <notebook>
+                        <page string="Descripción">
+                            <field name="description" placeholder="Descripción de la plantilla..."/>
+                        </page>
+                        <page string="Instrucciones">
+                            <field name="instruction" placeholder="Instrucciones detalladas..."/>
+                        </page>
+                    </notebook>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mantenimientosq_worksheet_template_view_list" model="ir.ui.view">
+        <field name="name">mantenimientosq.worksheet.template.list</field>
+        <field name="model">mantenimientosq.worksheet.template</field>
+        <field name="type">list</field>
+        <field name="arch" type="xml">
+            <list>
+                <field name="name"/>
+                <field name="active"/>
+            </list>
+        </field>
+    </record>
+
+    <record id="mantenimientosq_worksheet_template_action" model="ir.actions.act_window">
+        <field name="name">Plantillas de Hoja de Trabajo</field>
+        <field name="res_model">mantenimientosq.worksheet.template</field>
+        <field name="view_mode">list,form</field>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                Cree una nueva plantilla de hoja de trabajo
+            </p>
+        </field>
+    </record>
+
+    <!-- Settings View -->
+    <record id="mantenimientosq_config_settings_view_form" model="ir.ui.view">
+        <field name="name">mantenimientosq.config.settings.form</field>
+        <field name="model">res.config.settings</field>
+        <field name="priority" eval="70"/>
+        <field name="arch" type="xml">
+            <form string="Configuración" class="oe_form_configuration">
+                <header>
+                    <button string="Guardar" type="object" name="execute" class="oe_highlight"/>
+                    <button string="Cancelar" type="object" name="cancel" special="cancel"/>
+                </header>
+                <sheet>
+                    <h2>Configuración General</h2>
+                    <div class="row mt16 o_settings_container">
+                        <div class="col-12 col-lg-6 o_setting_box">
+                            <div class="o_setting_left_pane">
+                                <!-- Aquí irían los checkboxes de configuración -->
+                            </div>
+                            <div class="o_setting_right_pane">
+                                <span class="o_form_label">Configuración de MantenimientosQ</span>
+                                <div class="text-muted">
+                                    Configure las opciones generales del módulo
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </sheet>
+            </form>
+        </field>
+    </record>
+
+    <record id="mantenimientosq_config_settings_action" model="ir.actions.act_window">
+        <field name="name">Configuración</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">res.config.settings</field>
+        <field name="view_mode">form</field>
+        <field name="target">inline</field>
+        <field name="context">{'module' : 'mantenimientosq'}</field>
+    </record>
+</odoo>
+

@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Main Menu -->
+    <menuitem id="menu_mantenimientosq_root"
+        name="MantenimientoQ"
+        web_icon="mantenimientosq,static/description/icon.png"
+        sequence="80"/>
+
+    <!-- Dashboard Menu -->
+    <menuitem id="menu_mantenimientosq_dashboard"
+        name="Tablero"
+        parent="menu_mantenimientosq_root"
+        action="mantenimientosq_team_action"
+        sequence="10"/>
+
+    <!-- Maintenance Menu -->
+    <menuitem id="menu_mantenimientosq_maintenance"
+        name="Mantenimiento"
+        parent="menu_mantenimientosq_root"
+        sequence="20"/>
+        
+    <menuitem id="menu_mantenimientosq_maintenance_requests"
+        name="Solicitudes de Mantenimientos"
+        parent="menu_mantenimientosq_maintenance"
+        action="mantenimientosq_request_action"
+        sequence="10"/>
+        
+    <menuitem id="menu_mantenimientosq_maintenance_calendar"
+        name="Calendario de mantenimientos"
+        parent="menu_mantenimientosq_maintenance"
+        action="mantenimientosq_request_calendar_action"
+        sequence="20"/>
+
+    <!-- Equipment Menu -->
+    <menuitem id="menu_mantenimientosq_equipment"
+        name="Equipo"
+        parent="menu_mantenimientosq_root"
+        sequence="30"/>
+        
+    <menuitem id="menu_mantenimientosq_equipment_machines"
+        name="Máquinas y herramientas"
+        parent="menu_mantenimientosq_equipment"
+        action="mantenimientosq_equipment_action"
+        sequence="10"/>
+
+    <!-- Reports Menu -->
+    <menuitem id="menu_mantenimientosq_reports"
+        name="ReportesQ"
+        parent="menu_mantenimientosq_root"
+        sequence="40"/>
+        
+    <menuitem id="menu_mantenimientosq_reports_requests"
+        name="Solicitudes de Mantenimientos"
+        parent="menu_mantenimientosq_reports"
+        action="mantenimientosq_request_report_action"
+        sequence="10"/>
+        
+    <menuitem id="menu_mantenimientosq_reports_histogram"
+        name="Histograma"
+        parent="menu_mantenimientosq_reports"
+        action="mantenimientosq_histogram_action"
+        sequence="20"/>
+
+    <!-- Configuration Menu -->
+    <menuitem id="menu_mantenimientosq_config"
+        name="Configuración"
+        parent="menu_mantenimientosq_root"
+        sequence="50"/>
+        
+    <menuitem id="menu_mantenimientosq_config_settings"
+        name="Ajustes"
+        parent="menu_mantenimientosq_config"
+        action="mantenimientosq_config_settings_action"
+        sequence="10"/>
+        
+    <menuitem id="menu_mantenimientosq_config_teams"
+        name="Equipos y Mantto."
+        parent="menu_mantenimientosq_config"
+        action="mantenimientosq_team_action"
+        sequence="20"/>
+        
+    <menuitem id="menu_mantenimientosq_config_equipment_categories"
+        name="Categorías del equipo"
+        parent="menu_mantenimientosq_config"
+        action="mantenimientosq_equipment_category_action"
+        sequence="30"/>
+        
+    <menuitem id="menu_mantenimientosq_config_stages"
+        name="Etapas de mantenimiento"
+        parent="menu_mantenimientosq_config"
+        action="mantenimientosq_stage_action"
+        sequence="40"/>
+        
+    <menuitem id="menu_mantenimientosq_config_activity_types"
+        name="Tipos de actividad"
+        parent="menu_mantenimientosq_config"
+        action="mantenimientosq_activity_type_action"
+        sequence="50"/>
+        
+    <menuitem id="menu_mantenimientosq_config_worksheet_templates"
+        name="Plantilla de hoja de trabajo"
+        parent="menu_mantenimientosq_config"
+        action="mantenimientosq_worksheet_template_action"
+        sequence="60"/>
+</odoo>
+

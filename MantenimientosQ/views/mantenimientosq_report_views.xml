@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+    <!-- Histogram View -->
+    <record id="mantenimientosq_histogram_view" model="ir.ui.view">
+        <field name="name">mantenimientosq.request.histogram</field>
+        <field name="model">mantenimientosq.request</field>
+        <field name="arch" type="xml">
+            <graph string="Histograma de Mantenimientos" type="bar" sample="1">
+                <field name="date_request" interval="month"/>
+                <field name="team_id"/>
+                <field name="state"/>
+            </graph>
+        </field>
+    </record>
+
+    <record id="mantenimientosq_histogram_action" model="ir.actions.act_window">
+        <field name="name">Histograma</field>
+        <field name="res_model">mantenimientosq.request</field>
+        <field name="view_mode">graph</field>
+        <field name="view_id" ref="mantenimientosq_histogram_view"/>
+        <field name="help" type="html">
+            <p class="o_view_nocontent_smiling_face">
+                No hay datos para mostrar en el histograma
+            </p>
+        </field>
+    </record>
+</odoo>
+
